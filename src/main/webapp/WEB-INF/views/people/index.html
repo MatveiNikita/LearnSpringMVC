@@ -40,6 +40,9 @@
 <div th:each="person : ${people}">
     <a class="person" th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">View User</a>
 </div>
+<br/>
+<hr/>
+<a href="/people/new">Create new Person</a>
 
 </body>
 </html>
