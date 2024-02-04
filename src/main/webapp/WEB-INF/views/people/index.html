@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All People</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .person {
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .person:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<h1>All People</h1>
+
+<div th:each="person : ${people}">
+    <a class="person" th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">View User</a>
+</div>
+
+</body>
+</html>

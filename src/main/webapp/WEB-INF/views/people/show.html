@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .person-info {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Person Details</h1>
+
+<div class="person-info">
+    <p th:text="${person.getName()}">Name: VALUE</p>
+    <p th:text="${person.getId()}">ID: VALUE</p>
+</div>
+
+</body>
+</html>
