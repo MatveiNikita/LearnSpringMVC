@@ -18,11 +18,38 @@
         }
 
         .person-info {
-            margin-bottom: 15px;
-            padding: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
             background-color: #3498db;
             color: #fff;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .edit-link,
+        .delete-form {
+            margin-top: 15px;
+        }
+
+        .edit-link,
+        .delete-button {
+            display: inline-block;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-link:hover,
+        .delete-button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -31,12 +58,13 @@
 <h1>Person Details</h1>
 
 <div class="person-info">
-    <p th:text="${person.getName()}">Name: VALUE</p>
-    <p th:text="${person.getId()}">ID: VALUE</p>
-    <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+    <p><strong>Name:</strong> <span th:text="${person.getName()}">VALUE</span></p>
+    <p><strong>ID:</strong> <span th:text="${person.getId()}">VALUE</span></p>
 
-    <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
-        <input type="submit"  value="Delete"/>
+    <a class="edit-link" th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+
+    <form class="delete-form" th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+        <button class="delete-button" type="submit">Delete</button>
     </form>
 </div>
 

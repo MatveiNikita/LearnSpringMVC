@@ -31,6 +31,24 @@
         .person:hover {
             background-color: #2980b9;
         }
+
+        hr {
+            margin-top: 20px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .create-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .create-link:hover {
+            color: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -40,9 +58,10 @@
 <div th:each="person : ${people}">
     <a class="person" th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">View User</a>
 </div>
-<br/>
+
 <hr/>
-<a href="/people/new">Create new Person</a>
+
+<a class="create-link" href="/people/new">Create New Person</a>
 
 </body>
 </html>
