@@ -56,12 +56,13 @@
 <h1>All People</h1>
 
 <div th:each="person : ${people}">
-    <a class="person" th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">View User</a>
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
 </div>
 
 <hr/>
 
-<a class="create-link" href="/people/new">Create New Person</a>
+<a href="/people/new">Create New Person</a>
 
 </body>
 </html>

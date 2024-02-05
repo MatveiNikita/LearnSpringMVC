@@ -55,18 +55,15 @@
 </head>
 <body>
 
-<h1>Person Details</h1>
+<p th:text="${person.getName() + ', ' + person.getAge()}">VALUE</p>
+<p th:text="${'Email: ' + person.getEmail()}">VALUE</p>
+<p th:text="${person.getId()}">VALUE</p>
 
-<div class="person-info">
-    <p><strong>Name:</strong> <span th:text="${person.getName()}">VALUE</span></p>
-    <p><strong>ID:</strong> <span th:text="${person.getId()}">VALUE</span></p>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
 
-    <a class="edit-link" th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
-
-    <form class="delete-form" th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
-        <button class="delete-button" type="submit">Delete</button>
-    </form>
-</div>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
 
 </body>
 </html>
