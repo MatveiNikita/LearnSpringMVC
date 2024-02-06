@@ -6,12 +6,11 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class PersonDAO {
+    private static int ID;
     private final JdbcTemplate jdbcTemplate;
     @Autowired
     public PersonDAO(JdbcTemplate jdbcTemplate) {
@@ -31,7 +30,7 @@ public class PersonDAO {
     }
 
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO person VALUES(1,?,?,?)", person.getAge(), person.getName(),person.getEmail());
+        jdbcTemplate.update("INSERT INTO person VALUES(?,?,?,?)",ID++, person.getAge(), person.getName(),person.getEmail());
     }
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM person WHERE id=?", id);

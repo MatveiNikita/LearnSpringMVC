@@ -3,6 +3,7 @@ package com.nikita.springMVC.model;
 import jakarta.validation.constraints.*;
 
 public class Person {
+
     private int id;
     @NotEmpty(message = "Name should be not empty")
     @Size(min = 2, max = 32, message = "Name should be between 2 and 32 characters long")
@@ -15,13 +16,6 @@ public class Person {
 
     public Person(){
 
-    }
-
-    public Person(String name, int id, int age, String email) {
-        this.name = name;
-        this.id = id;
-        this.age = age;
-        this.email = email;
     }
 
     public String getName() {

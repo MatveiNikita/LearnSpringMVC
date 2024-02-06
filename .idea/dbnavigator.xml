@@ -17,7 +17,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="a9fbaa3e-ece9-4392-af78-7e724f82e0b0">
-      <console name="TestBase" type="STANDARD" schema="public" session="Main"><![CDATA[select * from person]]></console>
+      <console name="TestBase" type="STANDARD" schema="public" session="Main"><![CDATA[select * from person;]]></console>
     </connection>
     <connection id="581202a5-8d4a-433b-a4e3-7ef78bf9369e">
       <console name="MySQL_AppTEST" type="STANDARD" schema="" session="Main" />
@@ -94,7 +94,7 @@
           <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="true" />
-          <connect-automatically value="true" />
+          <connect-automatically value="false" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="false" />
           <environment-type value="default" />
